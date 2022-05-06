@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { getMovies } from '../services/fakeMovieService';
-import ListGroup from './listGroup';
+import ListGroup from './common/listGroup';
 import MoviesTables from './moviesTables';
 
-import Pagination from './pagination';
+import Pagination from './common/pagination';
 import { paginate } from '../utils/paginate';
 import { getGenres } from '../services/fakeGenreService';
-import { filter } from 'lodash';
 import _ from 'lodash';
 class Movies extends Component {
     state = { 
@@ -98,8 +97,6 @@ class Movies extends Component {
                     onPageChange={this.handlePageChange} 
                     />   
                 </div>
-
- 
             </div>
         )}
 }
