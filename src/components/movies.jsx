@@ -8,13 +8,17 @@ import { genres, getGenres } from '../services/fakeGenreService';
 
 class Movies extends Component {
     state = { 
-        movies: getMovies(),
-        genres: getGenres(),
+        movies: [],
+        genres: [],
         currentGenre: 'Thriller',
         currentPage: 1,
         pageSize: 4,
          
      } ;
+
+     componentDidMount() {
+         this.setState({ movies: getMovies(), genres: getGenres() });
+     }
 
      handleDelete = (movie) => {
          console.log(movie)
